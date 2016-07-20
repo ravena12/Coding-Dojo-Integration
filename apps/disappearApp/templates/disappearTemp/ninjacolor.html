@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Color</title>
+</head>
+<body>
+{% load staticfiles %}
+	{% if color == 'orange' %}
+		<img src="{% static "disappearApp/michelangelo.jpg" %}" alt="My image"/>
+	{% endif %}
+	{% if color == 'blue' %}
+		<img src="{% static "disappearApp/leonardo.jpg" %}" alt="My image"/>
+	{% endif %}
+	{% if color == 'red' %}
+		<img src="{% static "disappearApp/raphael.jpg" %}" alt="My image"/>
+	{% endif %}
+	{% if color == 'purple' %}
+		<img src="{% static "disappearApp/donatello.jpg" %}" alt="My image"/>
+	{% endif %}
+	{% if april == True %}
+		<img src="{% static "disappearApp/notapril.jpg" %}" alt="My image"/>
+		{% endif %}
+</body>
+</html>

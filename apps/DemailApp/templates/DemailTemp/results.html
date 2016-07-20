@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success</title>
+</head>
+<body>
+{% if messages %}
+<ul class="messages">
+	{% for message in messages %}
+	<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }} </li>
+	{% endfor %}
+</ul>
+{% endif %}
+<h3> Email Addresses Entered </h3>
+{% for item in emails %}
+	<p>{{item.email}}{{item.created_at}}</p>
+{% endfor %}
+
+</body>
+</html>

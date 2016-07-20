@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Courses</title>
+</head>
+<body>
+	<h1> Add a new course </h1>
+	<form action = "{% url 'my_course_course' %}" method = 'post'>
+	{% csrf_token %}
+		<p>
+			<label for="name">Name:</label>
+			<textarea name ='name'></textarea>
+		</p>
+		<p>
+			<label for="description">Description:</label>
+			<textarea name ='description'></textarea>
+		</p>
+		<input type='submit' value='Add'>
+	</form>
+	<h1> Courses </h1>
+	<h4> Course Name   Description   Date Added  Actions </h4>
+	{% for item in courses %}
+		<p>{{ item.name }} {{ item.description }} {{ item.created_at }} {{item.id}}
+		<a href ="{% url 'my_course_destroy' item.id %}"> Remove </a>
+		</p>
+		{% csrf_token %}
+	{% endfor %}
+		<form action = "{% url 'my_user_course' %}">
+		{% csrf_token %}
+			<input type='submit' value='sign up'>
+		</form>
+
+
+</body>
+</html>
